@@ -2,3 +2,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('../src/assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf');
+}
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../src/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+.roboto-font {
+  font-family: 'RobotoMono';
+}
+
+.montserrat-font {
+  font-family: 'Montserrat';
+}
