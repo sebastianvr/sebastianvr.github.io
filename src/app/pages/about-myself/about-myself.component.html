@@ -1,20 +1,39 @@
 <div class="text-center p-9 bg-gray-900 dark:bg-gray-800 rounded-lg">
   <div class="text-left mb-4">
-    <h2 class="font-mono text-3xl font-semibold text-white dark:text-gray-300">Sobre mí</h2>
+    <h2 class="font-mono sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white dark:text-gray-300">Sobre mí</h2>
   </div>
   <div>
     <div class="flex justify-center mb-9">
       <div
-        class="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden">
-        <img src="path/to/your/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover"
+        class="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden border-4 border-white dark:border-gray-300">
+        <img src="path/to/your/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover dark:border-white"
           onerror="this.style.display='none';">
       </div>
     </div>
     <h1 class="roboto-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold my-4 text-white dark:text-gray-500"
       #nameEffect>{{ name }}</h1>
-    <p class="montserrat-font text-right text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-400 dark:text-gray-300">
+    <p
+      class="montserrat-font font-bold text-right text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-400 dark:text-gray-300">
       Desarrollador de
       <span #jobEffect>{{ job }}</span>.
     </p>
+
+    <hr class="my-6 border-gray-700 dark:border-gray-600">
+
+    <div class="text-left p-4">
+      <p
+        class="montserrat-font text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 dark:text-gray-400 leading-relaxed">
+        ¡Hola! Soy un apasionado de la tecnología con una dedicación constante por buscar soluciones innovadoras a
+        problemas complejos. Mi enfoque principal está en el desarrollo web y de aplicaciones, áreas en las que siempre
+        estoy aprendiendo y creciendo.
+      </p>
+
+      <p
+        class="montserrat-font text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 dark:text-gray-400 leading-relaxed">
+        Me entusiasma explorar nuevas herramientas y tecnologías que puedan mejorar mi trabajo y ampliar mis
+        habilidades. Ya sea a través de proyectos personales o colaborativos, mi objetivo es crear soluciones
+        eficientes, funcionales y con un impacto positivo en la experiencia del usuario.
+      </p>
+    </div>
   </div>
 </div>
