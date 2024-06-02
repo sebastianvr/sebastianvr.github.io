@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class SkillsComponent {
   skills = [
     { name: 'Node.js', path: 'nodejs' },
-    { name: 'Express', path: 'express' },
+    { name: 'Express', path: 'expressjs' },
     { name: 'Angular', path: 'angular' },
     { name: 'Sequelize', path: 'sequelize' },
     { name: 'MySql', path: 'mysql' },

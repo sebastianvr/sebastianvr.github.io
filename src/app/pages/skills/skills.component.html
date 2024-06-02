@@ -1,11 +1,15 @@
 <div class="container mx-auto p-9 bg-gray-900 dark:bg-gray-800 rounded-lg">
-  <h2 class="font-mono text-3xl font-semibold mb-4 text-white dark:text-gray-300">Skills</h2>
+  <h2 class="font-mono sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-white dark:text-gray-300">Skills</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @for (skill of skills; track $index) {
-    <div class="bg-gray-900 dark:bg-gray-300 rounded-lg shadow-md p-4 flex items-center">
-      <img [ngSrc]="skill.path + '.webp'" width="10" height="10" alt="{{ skill.name }}" class="w-10 h-10 mr-4">
-      <div>
-        <h3 class="montserrat-font text-white dark:text-gray-300 text-xl font-semibold">{{ skill.name }}</h3>
+    <div class="bg-white dark:bg-gray-300 rounded-lg shadow-md p-4 flex flex-col justify-between">
+      <div class="flex justify-center items-center p-4 flex-grow">
+        @if (skill.path) {
+        <img [src]="skill.path + '.webp'" alt="{{ skill.name }}" class="w-full h-auto">
+        }
+      </div>
+      <hr>
+      <div class="montserrat-font text-center font-semibold text-xl text-black dark:text-gray-600">{{ skill.name }}
       </div>
     </div>
     }
