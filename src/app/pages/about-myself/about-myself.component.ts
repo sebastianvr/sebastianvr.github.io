@@ -19,8 +19,8 @@ export class AboutMyselfComponent implements AfterViewInit {
   @ViewChild('jobEffect', { static: true }) titleTag2!: ElementRef;
 
   ngAfterViewInit(): void {
-    // this.animateName();
-    // this.animateJob();
+    this.animateName();
+    this.animateJob();
   }
 
   private animateName(): void {
