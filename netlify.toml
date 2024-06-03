@@ -1,0 +1,4 @@
+[build]
+  command = "ng build"
+  publish = "dist/sebastianvr.github.io/browser"
+  angularJson = "angular.json"
