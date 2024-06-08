@@ -1,5 +1,8 @@
-import { ViewportScroller } from '@angular/common';
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 @Component({
   selector: 'component-sidenav',
@@ -8,17 +11,66 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.css'
 })
-export class SidenavComponent {
-  @Output() toggleDarkModeEvent = new EventEmitter<void>();
+export class SidenavComponent implements AfterViewInit {
+  @Output() toggleDarkModeEvent = new EventEmitter<boolean>();
+  isDarkMode: boolean = false;
 
-  constructor(private viewportScroller: ViewportScroller) { }
+  sectionAbout!: HTMLElement | null;
+  sectionSkills!: HTMLElement | null;
+  sectionContact!: HTMLElement | null;
 
-  toggleDarkMode() {
-    this.toggleDarkModeEvent.emit();
+  constructor() { }
+
+  public toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    this.toggleDarkModeEvent.emit(this.isDarkMode);
   }
 
-  scrollToSection(sectionId: string): void {
-    this.viewportScroller.scrollToAnchor(sectionId);
+  ngAfterViewInit(): void {
+    if (typeof document !== 'undefined') {
+      this.sectionAbout = document.querySelector('#about-myself');
+      this.sectionSkills = document.querySelector('#my-skills');
+      this.sectionContact = document.querySelector('#contact');
+    }
+  }
+
+  public scrollToSection(sectionId: string): void {
+    let section: HTMLElement | null;
+
+    switch (sectionId) {
+      case 'about-myself':
+        section = this.sectionAbout;
+        break;
+      case 'my-skills':
+        section = this.sectionSkills;
+        break;
+      case 'contact':
+        section = this.sectionContact;
+        break;
+      default:
+        return;
+    }
+
+    if (section) {
+      // Crear una línea de tiempo de GSAP
+      const tl = gsap.timeline();
+
+      // Añadir un efecto de rebote al inicial
+      tl.to(window, {
+        duration: 0.5,
+        scrollTo: { y: `+=20` }, // Rebotar hacia abajo
+        ease: 'power2.out'
+      });
+
+      // Añadir la animación de scroll
+      tl.to(window, {
+        duration: 1,
+        scrollTo: { y: section, offsetY: 100 },
+        ease: 'power2.inOut'
+      });
+    } else {
+      console.error('No se pudo obtener la referencia al elemento de la sección:', sectionId);
+    }
   }
 
 }
