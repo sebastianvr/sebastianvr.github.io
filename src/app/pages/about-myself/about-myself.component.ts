@@ -12,6 +12,7 @@ gsap.registerPlugin(TextPlugin);
   styleUrl: './about-myself.component.css'
 })
 export class AboutMyselfComponent implements AfterViewInit {
+  imagePath : string = '';
   name: string = 'Sebastián Vidal';
   job: string = 'Software';
 

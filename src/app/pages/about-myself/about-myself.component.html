@@ -6,8 +6,10 @@
     <div class="flex justify-center mb-9">
       <div
         class="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden border-4 border-white dark:border-gray-300">
-        <img src="path/to/your/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover dark:border-white"
-          onerror="this.style.display='none';">
+        @if (this.imagePath) {
+          <img src="path/to/your/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover dark:border-white"
+            onerror="this.style.display='none';">
+        }
       </div>
     </div>
     <h1 class="roboto-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold my-4 text-white dark:text-gray-500"
@@ -24,7 +26,7 @@
       <p
         class="montserrat-font text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 dark:text-gray-400 leading-relaxed">
         ¡Hola! Soy un apasionado de la tecnología con una dedicación constante por buscar soluciones innovadoras a
-        problemas complejos. Mi enfoque principal está en el desarrollo web y de aplicaciones, áreas en las que siempre
+        los problemas. Mi enfoque principal está en el desarrollo web y de aplicaciones, áreas en las que siempre
         estoy aprendiendo y creciendo.
       </p>
 
