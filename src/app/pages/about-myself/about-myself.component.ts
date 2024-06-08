@@ -12,6 +12,7 @@ gsap.registerPlugin(TextPlugin);
   styleUrl: './about-myself.component.css'
 })
 export class AboutMyselfComponent implements AfterViewInit {
+  imagePath : string = '';
   name: string = 'Sebastián Vidal';
   job: string = 'Software';
 
@@ -19,8 +20,8 @@ export class AboutMyselfComponent implements AfterViewInit {
   @ViewChild('jobEffect', { static: true }) titleTag2!: ElementRef;
 
   ngAfterViewInit(): void {
-    // this.animateName();
-    // this.animateJob();
+    this.animateName();
+    this.animateJob();
   }
 
   private animateName(): void {

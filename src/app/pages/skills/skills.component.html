@@ -2,15 +2,19 @@
   <h2 class="font-mono sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-white dark:text-gray-300">Skills</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @for (skill of skills; track $index) {
-    <div class="bg-white dark:bg-gray-300 rounded-lg shadow-md p-4 flex flex-col justify-between">
+    <div class="bg-white dark:bg-gray-300 rounded-lg shadow-lg p-4 m-3 flex flex-col justify-between">
       <div class="flex justify-center items-center p-4 flex-grow">
         @if (skill.path) {
-        <img [src]="skill.path + '.webp'" alt="{{ skill.name }}" class="w-full h-auto">
+        <img [src]="'assets/images/' + skill.path + '.webp'" alt="{{ skill.name }}"
+          class="w-20 h-auto xs:w-16 sm:w-24 md:w-28 lg:w-30">
         }
       </div>
-      <hr>
-      <div class="montserrat-font text-center font-semibold text-xl text-black dark:text-gray-600">{{ skill.name }}
-      </div>
+      <a [href]="skill.url" target="_blank" class="mt-4 inline-flex justify-center items-center">
+        <div
+          class="montserrat-font text-sm text-center font-semibold dark:text-gray-100 bg-gray-900 dark:bg-gray-900 text-black py-1 px-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 shadow-lg">
+          {{ skill.name }}
+        </div>
+      </a>
     </div>
     }
   </div>
