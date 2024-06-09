@@ -6,6 +6,7 @@ import { SkillsComponent } from './pages/skills/skills.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutMyselfComponent } from './pages/about-myself/about-myself.component';
+import { DarkButtonComponent } from './components/dark-button/dark-button.component';
 
 const components = [
   RouterOutlet,
@@ -13,7 +14,8 @@ const components = [
   SkillsComponent,
   FooterComponent,
   ContactComponent,
-  AboutMyselfComponent
+  AboutMyselfComponent,
+  DarkButtonComponent
 ];
 
 @Component({
@@ -24,11 +26,12 @@ const components = [
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-
-  isDarkMode: boolean = false;
-
-  toggleDarkMode(): void {
-    this.isDarkMode = !this.isDarkMode;
+  toggleDarkMode(isDarkMode: boolean) {
+    if (isDarkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
   }
 
 }

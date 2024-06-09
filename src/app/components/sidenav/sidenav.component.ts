@@ -12,19 +12,11 @@ gsap.registerPlugin(ScrollToPlugin);
   styleUrl: './sidenav.component.css'
 })
 export class SidenavComponent implements AfterViewInit {
-  @Output() toggleDarkModeEvent = new EventEmitter<boolean>();
-  isDarkMode: boolean = false;
-
   sectionAbout!: HTMLElement | null;
   sectionSkills!: HTMLElement | null;
   sectionContact!: HTMLElement | null;
 
   constructor() { }
-
-  public toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-    this.toggleDarkModeEvent.emit(this.isDarkMode);
-  }
 
   ngAfterViewInit(): void {
     if (typeof document !== 'undefined') {
