@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { EmailData, EmailService } from '../../services/email.service';
+import { EmailData, EmailService } from '../../services/email/email.service';
 import { CommonModule } from '@angular/common';
 import { catchError, of, tap } from 'rxjs';
 import { ToastComponent } from '../../components/toast/toast.component';
