@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { EmailJSResponseStatus } from 'emailjs-com';
 import emailjs from 'emailjs-com';
 import { Observable, from } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
+
 
 export interface EmailData {
   to: string,
