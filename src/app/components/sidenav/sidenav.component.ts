@@ -16,6 +16,7 @@ export class SidenavComponent implements AfterViewInit {
   sectionSkills!: HTMLElement | null;
   sectionContact!: HTMLElement | null;
   sectionWorkExperience!: HTMLElement | null;
+  sectionProjects!: HTMLElement | null;
 
   constructor() { }
 
@@ -25,6 +26,7 @@ export class SidenavComponent implements AfterViewInit {
       this.sectionSkills = document.querySelector('#my-skills');
       this.sectionWorkExperience = document.querySelector('#work-experience');
       this.sectionContact = document.querySelector('#contact');
+      this.sectionProjects = document.querySelector('#my-projects');
     }
   }
 
@@ -43,6 +45,9 @@ export class SidenavComponent implements AfterViewInit {
         break;
       case 'contact':
         section = this.sectionContact;
+        break;
+      case 'my-projects':
+        section = this.sectionProjects;
         break;
       default:
         return;

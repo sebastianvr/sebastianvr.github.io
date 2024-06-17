@@ -10,6 +10,8 @@ import { DarkButtonComponent } from './components/dark-button/dark-button.compon
 import { ThemeService } from './services/dark-mode/dark-mode.service';
 import { CommonModule } from '@angular/common';
 import { WorkExperienceComponent } from './pages/work-experience/work-experience.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { BackTopButtonComponent } from './components/back-top-button/back-top-button.component';
 
 const components = [
   CommonModule,
@@ -20,7 +22,9 @@ const components = [
   ContactComponent,
   AboutMyselfComponent,
   DarkButtonComponent,
-  WorkExperienceComponent
+  WorkExperienceComponent,
+  ProjectsComponent,
+  BackTopButtonComponent,
 ];
 
 @Component({
