@@ -3,7 +3,7 @@
         @for (image of projectPortfolio; track image.index) {
         <div [attr.data-carousel-item]="image.index" class="duration-1000 ease-in-out">
             <!-- Añade las clases necesarias a la imagen -->
-            <img [src]="'assets/images/carousel/project-portfolio/' + image.src + '.webp'" alt="{{ image.src+'.webp' }}"
+            <img [src]="'assets/images/carousel/' + image.src + '.webp'" alt="{{ image.src+'.webp' }}"
                 class="block w-full h-full object-cover text-center">
         </div>
         }
