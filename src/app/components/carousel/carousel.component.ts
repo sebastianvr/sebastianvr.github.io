@@ -1,12 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, Inject, Input, PLATFORM_ID } from '@angular/core';
 import { initFlowbite } from 'flowbite';
-import { After } from 'v8';
+import { Project } from '../../pages/projects/projects.component';
 
-interface Project {
-  index: number,
-  src : string,
-}
 
 @Component({
   selector: 'component-carousel',
@@ -16,28 +12,12 @@ interface Project {
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent implements AfterViewInit {
-  projectPortfolio: Project[] = [
-    {
-      index: 0,
-      src: 'about-me'
-    },
-    {
-      index: 1,
-      src: 'experience'
-    },
-    {
-      index: 2,
-      src: 'projects'
-    },
-    {
-      index: 3,
-      src: 'contact'
-    },
-  ];
+  @Input() projectPortfolio: Project[] = [];
+
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-  ) {}
+  ) { }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
